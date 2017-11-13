@@ -1,0 +1,2 @@
+class ArticleOutfit < ApplicationRecord
+end
