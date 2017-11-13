@@ -10,6 +10,7 @@ class OutfitsController < ApplicationController
   # GET /outfits/1
   # GET /outfits/1.json
   def show
+    @outfit = Outfit.find(params[:id])
   end
 
   # GET /outfits/new
@@ -19,46 +20,28 @@ class OutfitsController < ApplicationController
 
   # GET /outfits/1/edit
   def edit
+    @outfit = Outfit.find(params[:id])
   end
 
   # POST /outfits
   # POST /outfits.json
   def create
-    @outfit = Outfit.new(outfit_params)
+    @outfit = Outfit.new(params)
+    @outfit.save
 
-    respond_to do |format|
-      if @outfit.save
-        format.html { redirect_to @outfit, notice: 'Outfit was successfully created.' }
-        format.json { render :show, status: :created, location: @outfit }
-      else
-        format.html { render :new }
-        format.json { render json: @outfit.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /outfits/1
   # PATCH/PUT /outfits/1.json
   def update
-    respond_to do |format|
-      if @outfit.update(outfit_params)
-        format.html { redirect_to @outfit, notice: 'Outfit was successfully updated.' }
-        format.json { render :show, status: :ok, location: @outfit }
-      else
-        format.html { render :edit }
-        format.json { render json: @outfit.errors, status: :unprocessable_entity }
-      end
-    end
+
   end
 
   # DELETE /outfits/1
   # DELETE /outfits/1.json
   def destroy
-    @outfit.destroy
-    respond_to do |format|
-      format.html { redirect_to outfits_url, notice: 'Outfit was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    @outfit = Outfit.find(params[:id])
+    @outfit.destory
   end
 
   private
