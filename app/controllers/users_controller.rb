@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       @user.save
       redirect_to user_path(@user)
     else
-      flash.now[:notice] = "There was an error signing you up"
+      flash.now[:notice] = "There was an error getting you signed up. Try that again :)"
       render :new
     end
   end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-  
+
   end
 
   private
