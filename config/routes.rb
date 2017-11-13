@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/", to: "static#home", as: "root"
   resources :article_outfits
   resources :outfits
   resources :articles
