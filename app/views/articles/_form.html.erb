@@ -1,3 +1,44 @@
-<%= form_with(model: article, local: true) do |form| %>
+<%= form_with(model: article, local: true, html: { multipart: true}) do |form| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
+      <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category, id: :article_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :article_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :summer %>
+    <%= form.check_box :summer, id: :article_summer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :winter %>
+    <%= form.check_box :winter, id: :article_winter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

@@ -26,16 +26,28 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(params)
-    @article.save
+    @article = Article.new(article_params)
 
+      if @article.save
+        redirect_to @article
+
+      else
+        render :new
+
+      end
   end
 
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-  
+  @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end
   end
+
 
   # DELETE /articles/1
   # DELETE /articles/1.json
@@ -52,6 +64,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:category, :color, :summer, :winter)
+      params.require(:article).permit(:category, :color, :summer, :winter, :image)
     end
 end
