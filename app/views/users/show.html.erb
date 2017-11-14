@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%if logged_in?%>
+  <h1>Your Dashboard</h1>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <ul>
+    <li><%=link_to "View Your Outfits", outfit_path(@user)%></li>
+    <li><%=link_to "View Your Closet", article_path(@user)%></li>
+    <li><%=link_to "View Other Users' Outfits", outfits_path%></li>
+
+  <%else%>
+    <li><%=link_to "Click Here to Login", root_path%></li>
+  </ul>
+<%end%>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
