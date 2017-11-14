@@ -5,5 +5,17 @@
   <%= @outfit.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_outfit_path(@outfit) %> |
-<%= link_to 'Back', outfits_path %>
+
+
+<%= form_for @outfit do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div classs="field">
+    <%= f.text_area :comment %>
+  </div>
+  <div classs="field">
+      <%= f.collection_select(:article_id, Article.all, :id, :category)%>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
