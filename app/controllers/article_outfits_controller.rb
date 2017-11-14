@@ -24,41 +24,19 @@ class ArticleOutfitsController < ApplicationController
   # POST /article_outfits
   # POST /article_outfits.json
   def create
-    @article_outfit = ArticleOutfit.new(article_outfit_params)
 
-    respond_to do |format|
-      if @article_outfit.save
-        format.html { redirect_to @article_outfit, notice: 'Article outfit was successfully created.' }
-        format.json { render :show, status: :created, location: @article_outfit }
-      else
-        format.html { render :new }
-        format.json { render json: @article_outfit.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /article_outfits/1
   # PATCH/PUT /article_outfits/1.json
   def update
-    respond_to do |format|
-      if @article_outfit.update(article_outfit_params)
-        format.html { redirect_to @article_outfit, notice: 'Article outfit was successfully updated.' }
-        format.json { render :show, status: :ok, location: @article_outfit }
-      else
-        format.html { render :edit }
-        format.json { render json: @article_outfit.errors, status: :unprocessable_entity }
-      end
-    end
+
   end
 
   # DELETE /article_outfits/1
   # DELETE /article_outfits/1.json
   def destroy
-    @article_outfit.destroy
-    respond_to do |format|
-      format.html { redirect_to article_outfits_url, notice: 'Article outfit was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
   end
 
   private
