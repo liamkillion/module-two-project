@@ -3,4 +3,35 @@
 <%= render 'form', outfit: @outfit %>
 
 <%= link_to 'Back', outfits_path %>
-<!--five collection selects(arg is where Collection equals pants)-->
+
+<h1>New Outfit</h1>
+
+<%= form_for @outfit do |f| %>
+  <%= f.collection_select(:article_id, Article.all.where(category: "top"), :id, :top)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+  <%= f.collection_select(:article_id, Article.all.where(category: "accessory"), :id, :accessory)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+
+  <%= f.collection_select(:article_id, Article.all.where(category: "outerwear"), :id, :outerwear)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+
+  <%= f.collection_select(:article_id, Article.all.where(category: "bottom"), :id, :bottom)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+  <%= f.collection_select(:article_id, Article.all.where(category: "shoes"), :id, :shoes)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+
+
+
+<% end %>
+
+<%= link_to 'Back', outfits_path %>
