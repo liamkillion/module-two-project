@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+require 'pry'
+
+articles = CSV.read('./db/module_2_project.csv')
+
+article_headers = articles.shift
+
+article_hashes = articles.map {|article| Hash[article_headers.zip(article)]}
+
+article_hashes.each do |article|
+  Article.create(article)
+end
