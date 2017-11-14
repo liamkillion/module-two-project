@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113212035) do
+ActiveRecord::Schema.define(version: 20171113225027) do
 
   create_table "article_outfits", force: :cascade do |t|
     t.integer "outfit_id"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20171113212035) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string "category"
     t.string "color"
     t.boolean "summer"
     t.boolean "winter"
