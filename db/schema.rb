@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171113190503) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string "type"
+    t.string "category"
     t.string "color"
     t.boolean "summer"
     t.boolean "winter"
