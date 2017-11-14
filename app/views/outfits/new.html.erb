@@ -1,57 +1,25 @@
 <h1>New Outfit</h1>
-
+<%@user_articles = Article.all.where(user_id:session[:user_id])%>
 <%= form_for @outfit do |f| %>
-  <%= f.collection_select(:article_id, Article.all.where(category: "pants"), :id, :pants)%>
+  <%= f.collection_select(:pants, @user_articles.where(category: "pants"), :id, :category)%>
   <%= f.submit "Select" %>
 <br>
 <br>
-  <%= f.collection_select(:article_id, Article.all.where(category: "shirt"), :id, :shirt)%>
-  <%= f.submit "Select" %>
-<br>
-<br>
-
-  <%= f.collection_select(:article_id, Article.all.where(category: "shoes"), :id, :shoes)%>
+  <%= f.collection_select(:shirt, @user_articles.where(category: "shirt"), :id, :category)%>
   <%= f.submit "Select" %>
 <br>
 <br>
 
-  <%= f.collection_select(:article_id, Article.all.where(category: "outerwear"), :id, :outerwear)%>
-  <%= f.submit "Select" %>
-<br>
-<br>
-  <%= f.collection_select(:article_id, Article.all.where(category: "accessories"), :id, :accessories)%>
+  <%= f.collection_select(:shoes, @user_articles.where(category: "shoes"), :id, :category)%>
   <%= f.submit "Select" %>
 <br>
 <br>
 
-
-
-<% end %>
-
-<%= link_to 'Back', outfits_path %>
-
-<h1>New Outfit</h1>
-
-<%= form_for @outfit do |f| %>
-  <%= f.collection_select(:article_id, Article.all.where(category: "top"), :id, :top)%>
+  <%= f.collection_select(:outerwear, @user_articles.where(category: "outerwear"), :id, :category)%>
   <%= f.submit "Select" %>
 <br>
 <br>
-  <%= f.collection_select(:article_id, Article.all.where(category: "accessory"), :id, :accessory)%>
-  <%= f.submit "Select" %>
-<br>
-<br>
-
-  <%= f.collection_select(:article_id, Article.all.where(category: "outerwear"), :id, :outerwear)%>
-  <%= f.submit "Select" %>
-<br>
-<br>
-
-  <%= f.collection_select(:article_id, Article.all.where(category: "bottom"), :id, :bottom)%>
-  <%= f.submit "Select" %>
-<br>
-<br>
-  <%= f.collection_select(:article_id, Article.all.where(category: "shoes"), :id, :shoes)%>
+  <%= f.collection_select(:accessories, @user_articles.where(category: "accessories"), :id, :category)%>
   <%= f.submit "Select" %>
 <br>
 <br>
