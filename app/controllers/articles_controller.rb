@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @article = Article.find(params[:id])
   end
 
   # GET /articles/new
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    @article = Article.find(params[:id])
   end
 
   # POST /articles
@@ -26,15 +28,13 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
+        redirect_to @article
+
       else
-        format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        render :new
+
       end
-    end
   end
 
   # PATCH/PUT /articles/1
@@ -48,14 +48,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
     @article.destroy
-    respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
   end
 
   private
