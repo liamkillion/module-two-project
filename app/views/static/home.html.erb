@@ -1,0 +1,22 @@
+<h1>Welcome To Polyvore</h1>
+<h3>Create an Account</h3>
+
+<%= form_for @user do |f|  %>
+<%= f.label :email %>
+<%= f.text_field :email %>
+<%= f.label :password %>
+<%= f.password_field :password %><br></br>
+<%= f.submit "Join Polyvore" %>
+<% end %>
+<br></br>
+<h3>Login</h3>
+<%= form_tag "/login" do %>
+
+  <%= label_tag "user[email]", "email"  %>
+  <%= text_field_tag "user[email]" %>
+
+  <%= label_tag "user[password]", "password" %>
+  <%= password_field_tag "user[password]" %><br></br>
+
+<%= button_tag "login" %>
+<% end %>
