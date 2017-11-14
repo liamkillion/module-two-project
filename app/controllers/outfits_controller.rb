@@ -26,8 +26,9 @@ class OutfitsController < ApplicationController
   # POST /outfits
   # POST /outfits.json
   def create
-    @outfit = Outfit.new(params)
+    @outfit = Outfit.new(outfit_params)
     @outfit.save
+    redirect_to outfit_path(@outfit)
 
   end
 

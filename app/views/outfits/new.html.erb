@@ -1,5 +1,31 @@
 <h1>New Outfit</h1>
 
-<%= render 'form', outfit: @outfit %>
+<%= form_for @outfit do |f| %>
+  <%= f.collection_select(:article_id, Article.all.where(category: "pants"), :id, :pants)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+  <%= f.collection_select(:article_id, Article.all.where(category: "shirt"), :id, :shirt)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+
+  <%= f.collection_select(:article_id, Article.all.where(category: "shoes"), :id, :shoes)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+
+  <%= f.collection_select(:article_id, Article.all.where(category: "outerwear"), :id, :outerwear)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+  <%= f.collection_select(:article_id, Article.all.where(category: "accessories"), :id, :accessories)%>
+  <%= f.submit "Select" %>
+<br>
+<br>
+
+
+
+<% end %>
 
 <%= link_to 'Back', outfits_path %>
