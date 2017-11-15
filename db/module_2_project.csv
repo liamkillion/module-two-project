@@ -1,1 +1,1 @@
-category,color,summer,wintertop,red,TRUE,FALSEaccessory,red,FALSE,TRUEouterwear,blue,TRUE,TRUEbottom,blue,FALSE,TRUEshoes,white,TRUE,FALSEtop,white,FALSE,TRUE
+category,color,summer,winter,user_idtop,red,TRUE,FALSE,1accessory,red,FALSE,TRUE,1outerwear,blue,TRUE,TRUE,2bottom,blue,FALSE,TRUE,2shoes,white,TRUE,FALSE,2top,white,FALSE,TRUE,2

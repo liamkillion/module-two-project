@@ -152,7 +152,7 @@ h1 {
 <input type="radio" onclick="filterSelection('shoes')" name="category"> Shoes
 <br>
 <br>
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'New Article', new_user_article_path %>
 
 
 <!-- Portfolio Gallery Grid -->
@@ -163,9 +163,8 @@ h1 {
       <img id="myImg" src="<%= article.image.url %>" alt="Article name" style="width:100%">
       <h4><%=article.color%> + <%=article.winter%> + <%=article.summer%> </h4>
       <p>Article Name</p>
-      <p><%= link_to 'Show', article %></p>
-      <p><%= link_to 'Edit', edit_article_path(article) %></p>
-      <p><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <p><%= link_to 'Show', user_article_path(article.user, article) %></p>
+      <p><%= link_to 'Edit', edit_user_article_path(article.user, article) %></p>
     </div>
   </div>
 <% end %>

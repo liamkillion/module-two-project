@@ -5,6 +5,10 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @users = []
+    Article.all.each do |article|
+      @users << article.user_id
+    end
   end
 
   # GET /articles/1
@@ -42,7 +46,7 @@ class ArticlesController < ApplicationController
   def update
   @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to article_path(@article)
+      redirect_to user_article_path(@article.user, @article)
     else
       render :edit
     end
