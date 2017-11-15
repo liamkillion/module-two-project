@@ -11,20 +11,27 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= form.label :email %>
+    <br>
     <%= form.text_field :email, id: :user_email %>
   </div>
+<br>
 
   <div class="field">
     <%= form.label :password %>
+    <br>
     <%= form.text_field :password, id: :user_password %>
   </div>
+<br>
 
   <div class="field">
     <%= form.label :name %>
+    <br>
     <%= form.text_field :name, id: :user_name %>
   </div>
+
 
   <div class="actions">
     <%= form.submit %>
