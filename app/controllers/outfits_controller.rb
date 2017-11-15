@@ -28,8 +28,7 @@ class OutfitsController < ApplicationController
   def create
     @outfit = Outfit.new(outfit_params)
     @outfit.save
-    redirect_to outfit_path(@outfit)
-
+    redirect_to user_outfit_path(user_id: session[:user_id], id: @outfit)
   end
 
   # PATCH/PUT /outfits/1
@@ -46,13 +45,13 @@ class OutfitsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_outfit
-      @outfit = Outfit.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_outfit
+    @outfit = Outfit.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def outfit_params
-      params.require(:outfit).permit(:user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def outfit_params
+    params.require(:outfit).permit(:name, :user_id, :article_ids=>[])
+  end
 end
