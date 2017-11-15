@@ -1,22 +1,47 @@
-<h1>Welcome To Polyvore</h1>
+
+
+<br>
+<br>
 <h3>Create an Account</h3>
 
+<!-- <%= form_tag "/login", :class => "form-inline" do %>
+    <%= text_field_tag "user[email]" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+<% end %> -->
+
 <%= form_for @user do |f|  %>
-<%= f.label :email %>
-<%= f.text_field :email %>
+<div class="col-md-8">
+<div class="form-group">
+<%= f.label :email, "_"%>
+<br>
+
+<%= f.text_field :email, {placeholder: 'email', class: 'transparent-input focus'} %>
+<br>
+<br>
 <%= f.label :password %>
+<br>
 <%= f.password_field :password %><br></br>
-<%= f.submit "Join Polyvore" %>
+
+<%= f.submit "Sign Up!" %>
+<br>
 <% end %>
 <br></br>
+
+
+
+<br>
+
 <h3>Login</h3>
 <%= form_tag "/login" do %>
-
   <%= label_tag "user[email]", "email"  %>
+  <br>
   <%= text_field_tag "user[email]" %>
-
+<br>
+<br>
   <%= label_tag "user[password]", "password" %>
+  <br>
   <%= password_field_tag "user[password]" %><br></br>
 
 <%= button_tag "login" %>
 <% end %>
+</div>
