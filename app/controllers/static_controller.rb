@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-
+  
   def home
 
     @articles = Article.all

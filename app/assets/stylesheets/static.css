@@ -1,0 +1,71 @@
+
+
+body, html {
+    height: 100%;
+}
+
+.bg {
+
+    background-image: url("Mens-Closet-Orgaznier-System.jpg");
+
+    height: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0.2;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: lightgray;
+  font-style: italic;
+}
+
+
+.on-top {
+  z-index: 1;
+  position: absolute;
+
+}
+
+.box{
+  color: #0
+}
+
+input:focus {
+    outline: none !important;
+
+    box-shadow: 0 0 0;
+    border-bottom: white;
+    padding:3px;
+
+}
+
+
+
+input.transparent-input{
+
+   background-color:rgba(0,0,0,0) !important;
+
+   border-bottom: white;
+   color: white;
+   border:0;
+   border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid white;
+}

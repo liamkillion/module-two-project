@@ -1,4 +1,4 @@
 class ArticleOutfit < ApplicationRecord
-  has_many :articles
-  has_many :outfits
+  belongs_to :article
+  belongs_to :outfit
 end

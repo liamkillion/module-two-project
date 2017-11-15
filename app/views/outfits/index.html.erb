@@ -1,6 +1,7 @@
-<p id="notice"><%= notice %></p>
 <%if logged_in?%>
+
 <h1>Your Outfits</h1>
+  <%=link_to "Create a new outfit", new_user_outfit_path%>
   <%outfits = Outfit.where(user_id: session[:user_id])%>
   <%outfits.each do |outfit|%>
   <ul>
@@ -15,4 +16,4 @@
 <br>
 
 
-<%end%>
+  <%end%>
