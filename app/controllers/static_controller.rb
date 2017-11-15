@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
   
   def home
+
     @articles = Article.all
     @outfits = Outfit.all
     @user = User.new

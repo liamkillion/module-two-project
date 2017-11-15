@@ -9,8 +9,11 @@
   </ul>
   <%end%>
 
+<h1>Links</h1>
 
-  <%else%>
-  <p><%=link_to "Click Here to Login", root_path%></p>
+<%=link_to "Create a new outfit", new_user_outfit_path(session[:user_id])%>
+<%else%>
+<br>
+
 
   <%end%>
