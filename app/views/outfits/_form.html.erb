@@ -1,4 +1,4 @@
-<%= form_with(model: outfit, local: true) do |form| %>
+<%= form_with(model: outfit, url:"/users/#{@outfit.user.id}/outfits/#{@outfit.id}", local: true) do |f| %>
   <% if outfit.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(outfit.errors.count, "error") %> prohibited this outfit from being saved:</h2>
@@ -11,12 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :outfit_user_id %>
-  </div>
+  <%@user_articles = Article.all.where(user_id:session[:user_id])%>
+    <%= f.label "Name of Outfit"%>
+    <%= f.text_field "name"%>
+    <br>
+    <%= f.label "Pants"%>
+    <%= f.collection_select(:article_ids, @user_articles.where(category: "bottom"), :id, :category)%>
+    <br>
+    <%= f.label "Shirt"%>
+    <%= f.collection_select(:article_ids, @user_articles.where(category: "top"), :id, :category)%>
+    <br>
+    <%= f.label "Shoes"%>
+    <%= f.collection_select(:article_ids, @user_articles.where(category: "shoes"), :id, :category)%>
+    <br>
+    <%= f.label "Outerwear"%>
+    <%= f.collection_select(:article_ids, @user_articles.where(category: "outerwear"), :id, :category)%>
+    <br>
+    <%= f.label "Accessories"%>
+    <%= f.collection_select(:article_ids, @user_articles.where(category: "accessory"), :id, :category)%>
+    <br>
+    <%= f.submit "Create Outfit" %> <br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

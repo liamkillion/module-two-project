@@ -1,5 +1,8 @@
-<h1>New Outfit</h1>
+<br>
+<br>
+<h3>Creating A New Outfit</h3>
 <%@user_articles = Article.all.where(user_id:session[:user_id])%>
+<<<<<<< HEAD
 
 <%=@user_articles.first.category%>
 
@@ -12,15 +15,31 @@
   <br>
   <%= f.label "Shirt"%>
   <%= f.collection_select(:article_ids, @user_articles.where(category: "top"), :id, :category)%>
+=======
+<%= form_for @outfit, url:user_outfits_path(session[:user_id]) do |f| %>
+  <%= f.label "Name of Outfit"%>
+  <%= f.text_field "name"%>
   <br>
-  <%= f.label "Shoes"%>
-  <%= f.collection_select(:article_ids, @user_articles.where(category: "shoes"), :id, :category)%>
+  <%= f.label "Select Top"%>
+  <%= f.collection_select(:top_id, @user_articles.where(category: "top"), :id, :description)%>
   <br>
-  <%= f.label "Outerwear"%>
-  <%= f.collection_select(:article_ids, @user_articles.where(category: "outerwear"), :id, :category)%>
+  <%= f.label "Select Outerwear"%>
+  <%= f.collection_select(:outerwear_id, @user_articles.where(category: "outerwear"), :id, :description)%>
+>>>>>>> 329a4c71cf50d0699923e7a4907dabed602e7998
   <br>
+  <%= f.label "Select Accessories"%>
+  <%= f.collection_select(:accessory_id, @user_articles.where(category: "accessory"), :id, :description)%>
+  <br>
+  <%= f.label "Select Bottom"%>
+  <%= f.collection_select(:bottom_id, @user_articles.where(category: "bottom"), :id, :description)%>
+  <br>
+<<<<<<< HEAD
   <%= f.label "Accessories"%>
   <%= f.collection_select(:article_ids, @user_articles.where(category: "accessory"), :id, :category)%>
+=======
+  <%= f.label "Select Shoes"%>
+  <%= f.collection_select(:shoes_id, @user_articles.where(category: "shoes"), :id, :description)%>
+>>>>>>> 329a4c71cf50d0699923e7a4907dabed602e7998
   <br>
   <%= f.submit "Create Outfit" %> <br>
 
