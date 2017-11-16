@@ -7,9 +7,17 @@
 <%bottom_article=Article.find(@outfit.bottom_id)%>
 <%shoes_article=Article.find(@outfit.shoes_id)%>
 
-<p><%=accessory_article.category%></p>
-<img id="myImg" src="<%= accessory_article.image.url %>" alt="Article name" style="width:100%">
-<p><%=top_article.category%></p>
-<p><%=outerwear_article.category%></p>
-<p><%=bottom_article.category%></p>
-<p><%=shoes_article.category%></p>
+<div class="container">
+  <p><%=accessory_article.category%></p>
+  <%=image_tag accessory_article.image.url(:thumb)%>
+  <!-- <img id="myImg" src="<#%= accessory_article.image.url %>" alt="Article name" style="width:100%"> -->
+  <p><%=top_article.category%></p>
+  <%=image_tag top_article.image.url(:thumb)%>
+  <p><%=outerwear_article.category%></p>
+  <%=image_tag outerwear_article.image.url(:thumb)%>
+  <p><%=bottom_article.category%></p>
+  <%=image_tag bottom_article.image.url(:thumb)%>
+  <p><%=shoes_article.category%></p>
+  <%=image_tag shoes_article.image.url(:thumb)%>
+
+</div>
