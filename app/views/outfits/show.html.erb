@@ -1,23 +1,47 @@
-<br>
-<br>
-<h3>Your Outfit</h3>
-<%accessory_article=Article.find(@outfit.accessory_id)%>
-<%top_article=Article.find(@outfit.top_id)%>
-<%outerwear_article=Article.find(@outfit.outerwear_id)%>
-<%bottom_article=Article.find(@outfit.bottom_id)%>
-<%shoes_article=Article.find(@outfit.shoes_id)%>
+<!DOCTYPE html>
 
-<div class="container">
-  <p><%=accessory_article.category%></p>
-  <%=image_tag accessory_article.image.url(:thumb)%>
-  <!-- <img id="myImg" src="<#%= accessory_article.image.url %>" alt="Article name" style="width:100%"> -->
-  <p><%=top_article.category%></p>
-  <%=image_tag top_article.image.url(:thumb)%>
-  <p><%=outerwear_article.category%></p>
-  <%=image_tag outerwear_article.image.url(:thumb)%>
-  <p><%=bottom_article.category%></p>
-  <%=image_tag bottom_article.image.url(:thumb)%>
-  <p><%=shoes_article.category%></p>
-  <%=image_tag shoes_article.image.url(:thumb)%>
+<html lang="en">
+  <head>
+    <style>
+    #top {
+      display: inline-block;
+      width:50%
+    }
 
-</div>
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <%accessory_article=Article.find(@outfit.accessory_id)%>
+    <%top_article=Article.find(@outfit.top_id)%>
+    <%outerwear_article=Article.find(@outfit.outerwear_id)%>
+    <%bottom_article=Article.find(@outfit.bottom_id)%>
+    <%shoes_article=Article.find(@outfit.shoes_id)%>
+
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-sm-12"><%=image_tag accessory_article.image.url(:accessorysize)%></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4"><%=image_tag outerwear_article.image.url(:medium)%></div>
+        <div class="col-sm-4"><%=image_tag top_article.image.url(:medium)%></div>
+        <div class="col-sm-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12"><%=image_tag bottom_article.image.url(:medium)%></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12"><%=image_tag shoes_article.image.url(:medium)%></div>
+      </div>
+      <div class="row">
+        <div class ="col-sm-12"><img src="/app/assets/images/baseball_hat.jpg"></div>
+    </div>
+  </body>
+</html>
