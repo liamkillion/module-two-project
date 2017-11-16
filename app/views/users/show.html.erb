@@ -1,25 +1,20 @@
 <%if logged_in?%>
-  <h1> </h1>
-  <p id="notice"><%= notice %></p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </p>
-
-  <ul>
-    <li><%=link_to "View Your Outfits", user_outfits_path(@user)%></li>
-    <li><%=link_to "View Your Closet", user_articles_path(@user)%></li>
-
-  <%else%>
-    <li><%=link_to "Click Here to Login", root_path%></li>
-  </ul>
+<h1> </h1>
+<p id="notice"><%= notice %></p>
+<p>
+   <strong>Name:</strong>
+   <!-- <%= @user.name %> -->
+</p>
+<p>
+   <strong>Email:</strong>
+   <%= @user.email %>
+</p>
+<ul>
+   <li><%=link_to "View Your Outfits", user_outfits_path(@user)%></li>
+   <li><%=link_to "View Your Closet", user_articles_path(@user)%></li>
+   <%else%>
+   <li><%=link_to "Click Here to Login", root_path%></li>
+</ul>
 <%end%>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
