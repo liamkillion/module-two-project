@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171116014145) do
   end
 
   create_table "articles", force: :cascade do |t|
+    t.string "category"
     t.string "color"
     t.boolean "summer"
     t.boolean "winter"
@@ -30,7 +31,10 @@ ActiveRecord::Schema.define(version: 20171116014145) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+<<<<<<< HEAD
     t.string "category"
+=======
+>>>>>>> 5dcc197bf65229c7d2c77e968145b3a82b6f04a7
     t.string "description"
   end
 
@@ -49,10 +53,11 @@ ActiveRecord::Schema.define(version: 20171116014145) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "password_digest"
+    t.string "password"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

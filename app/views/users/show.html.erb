@@ -1,11 +1,8 @@
 <%if logged_in?%>
+
   <h1>Your Dashboard</h1>
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </p>
 
   <p>
     <strong>Email:</strong>
@@ -22,6 +19,5 @@
     <li><%=link_to "Click Here to Login", root_path%></li>
   </ul>
 <%end%>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
