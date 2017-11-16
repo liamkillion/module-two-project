@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/", to: "static#home", as: "root"
   post '/users/:id/outfits/new', to: 'outfits#create'
+  post '/users/:id/articles/new', to: 'articles#create'
 
-  #get '/users/articles/:id/add_to_outfit/:id'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
