@@ -1,45 +1,38 @@
 <br>
 <br>
-<h3>Create an Account</h3>
-
+<br>
 <!-- <%= form_tag "/login", :class => "form-inline" do %>
-    <%= text_field_tag "user[email]" %>
-    <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
-<% end %> -->
-
-<%= form_for @user do |f|  %>
+   <%= text_field_tag "user[email]" %>
+   <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+   <% end %> -->
+<!-- <div class="headings1">
+   <h3>new user?</h3>
+   </div> -->
+<%= form_for @user, class: "moveright" do |f|  %>
 <div class="col-md-8">
 <div class="form-group">
-<%= f.label :email, "_"%>
-<br>
-
-<%= f.text_field :email, {placeholder: 'email', class: 'transparent-input focus'} %>
-<br>
-<br>
-<%= f.label :password %>
-<br>
-<%= f.password_field :password %><br></br>
-
-<%= f.submit "Sign Up!" %>
-<br>
-<% end %>
-<br></br>
-
-
-
-<br>
-
-<h3>Login</h3>
-<%= form_tag "/login" do %>
-  <%= label_tag "user[email]", "email"  %>
-  <br>
-  <%= text_field_tag "user[email]" %>
-<br>
-<br>
-  <%= label_tag "user[password]", "password" %>
-  <br>
-  <%= password_field_tag "user[password]" %><br></br>
-
-<%= button_tag "login" %>
-<% end %>
+   <br>
+   <%= f.text_field :email, {placeholder: 'new user email', class: 'transparent-input focus', size:59} %>
+   <br>
+   <br>
+   <br>
+   <%= f.password_field :password, {placeholder: 'new user password', class: 'transparent-input focus', size:59} %><br></br>
+   <%= f.button "Sign up", {class: "button"} %>
+   <br>
+   <% end %>
+   <br></br>
+   <br>
+   <!-- <div class="headings">
+      <h3> already have an account?</h3>
+      </div> -->
+   <br>
+   <br>
+   <%= form_tag "/login" do %>
+   <%= text_field_tag "user[email]", nil, placeholder: 'existing user email', class: 'transparent-input focus', size:59 %>
+   <br>
+   <br>
+   <br>
+   <%= password_field_tag "user[password]", nil, placeholder: 'existing user password', class: 'transparent-input focus', size:59 %><br></br>
+   <%= button_tag "Login", class: "button" %>
+   <% end %>
 </div>

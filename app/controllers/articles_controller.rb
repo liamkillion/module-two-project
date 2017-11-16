@@ -31,9 +31,10 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+    @article.user_id=params[:user_id]
 
       if @article.save
-        redirect_to @article
+        redirect_to user_article_path(@article.user.id, @article.id)
 
       else
         render :new
