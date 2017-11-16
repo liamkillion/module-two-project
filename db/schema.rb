@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20171116014145) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string "category"
     t.string "color"
     t.boolean "summer"
     t.boolean "winter"
@@ -38,7 +37,6 @@ ActiveRecord::Schema.define(version: 20171116014145) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "article_ids"
     t.string "name"
     t.integer "top_id"
     t.integer "bottom_id"
@@ -49,11 +47,10 @@ ActiveRecord::Schema.define(version: 20171116014145) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
 end

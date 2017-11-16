@@ -11,6 +11,10 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :article_description %>
+  </div>
 
   <div class="field">
     <%= form.label :category %>
