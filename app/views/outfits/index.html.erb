@@ -1,16 +1,14 @@
-<%if logged_in?%>
-
-<h1>Your Outfits</h1>
-  <%=link_to "Create a new outfit", new_user_outfit_path%>
+<br>
+<br>
+<h3>Your Outfits</h3>
   <%outfits = Outfit.where(user_id: session[:user_id])%>
-  <%outfits.each do |outfit|%>
-  <ul>
-    <li><%=link_to outfit.name, outfit_path(outfit)%></li>
-  </ul>
-  <%end%>
-
-
+  <%if outfits ==[]%>
+    <h5>Looks like you don't have any outfits yet!</h5>
   <%else%>
-  <p><%=link_to "Click Here to Login", root_path%></p>
-
+    <%outfits.each do |outfit|%>
+    <ul>
+      <li><%=link_to outfit.name, user_outfit_path(outfit.user,outfit)%></li>
+    </ul>
+    <%end%>
+  <%=link_to "Create a new outfit", new_user_outfit_path%>
   <%end%>

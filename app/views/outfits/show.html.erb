@@ -1,4 +1,15 @@
-<h1>HELLO</h1>
+<br>
+<br>
+<h3>Your Outfit</h3>
+<%accessory_article=Article.find(@outfit.accessory_id)%>
+<%top_article=Article.find(@outfit.top_id)%>
+<%outerwear_article=Article.find(@outfit.outerwear_id)%>
+<%bottom_article=Article.find(@outfit.bottom_id)%>
+<%shoes_article=Article.find(@outfit.shoes_id)%>
 
-<%=article=Article.find(@outfit.bottom_id)%>
-<%=article.category%>
+<p><%=accessory_article.category%></p>
+<img id="myImg" src="<%= accessory_article.image.url %>" alt="Article name" style="width:100%">
+<p><%=top_article.category%></p>
+<p><%=outerwear_article.category%></p>
+<p><%=bottom_article.category%></p>
+<p><%=shoes_article.category%></p>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115234002) do
+ActiveRecord::Schema.define(version: 20171116014145) do
 
   create_table "article_outfits", force: :cascade do |t|
     t.integer "outfit_id"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20171115234002) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string "category"
     t.string "color"
     t.boolean "summer"
     t.boolean "winter"
@@ -31,6 +30,8 @@ ActiveRecord::Schema.define(version: 20171115234002) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.string "category"
+    t.string "description"
   end
 
   create_table "outfits", force: :cascade do |t|
