@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-  
+
   def home
 
     @articles = Article.all
@@ -11,4 +11,7 @@ class StaticController < ApplicationController
     render :dashboard
   end
 
+  def about
+    
+  end
 end

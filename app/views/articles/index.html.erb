@@ -130,16 +130,16 @@ h1 {
 <br>
 <%= link_to 'New Article', new_user_article_path %>
 
-
+<%@user_articles = Article.all.where(user_id:session[:user_id])%>
 <!-- Portfolio Gallery Grid -->
 <div class="row">
-<% @articles.each do |article| %>
+<% @user_articles.each do |article| %>
   <div class="column <%=article.category%>">
     <div class="content">
       <img id="myImg" src="<%= article.image.url %>" alt="Article name" style="width:100%">
       <h4><%=article.color%> + <%=article.winter%> + <%=article.summer%> </h4>
       <p>Article Name</p>
-      <p><%= link_to 'Show', user_article_path(article.user, article) %></p>
+      <p><%= link_to 'Show', user_article_path(article.user.id, article.id) %></p>
       <p><%= link_to 'Edit', edit_user_article_path(article.user, article) %></p>
       <p><%=link_to "Create a new outfit", new_user_outfit_path(session[:user_id])%></p>
     </div>

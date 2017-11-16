@@ -31,10 +31,7 @@ ActiveRecord::Schema.define(version: 20171116014145) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-<<<<<<< HEAD
     t.string "category"
-=======
->>>>>>> 5dcc197bf65229c7d2c77e968145b3a82b6f04a7
     t.string "description"
   end
 
