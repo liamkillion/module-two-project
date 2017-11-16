@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   get "/", to: "static#home", as: "root"
   post '/users/:id/outfits/new', to: 'outfits#create'
   post '/users/:id/articles/new', to: 'articles#create'
+
   get '/logout', to: "sessions#destroy"
   get '/about', to: "static#about"
 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

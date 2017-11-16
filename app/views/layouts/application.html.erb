@@ -44,13 +44,6 @@
             </ul>
          </div>
       </nav>
-      <div class="row lime lighten-3 on-top">
-         <div class="col l3"></div>
-         <% flash.each do |k, v| %>
-         <div id="col l6"><%= v %></div>
-         <% end %>
-         <div class="col l3"></div>
-      </div>
       <div class="container on-top">
          <%= yield %>
       </div>

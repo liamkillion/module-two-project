@@ -7,19 +7,19 @@
   <%= f.text_field "name"%>
   <br>
   <%= f.label "Select Top"%>
-  <%= f.collection_select(:top_id, @user_articles.where(category: "top"), :id, :category)%>
+  <%= f.collection_select(:top_id, @user_articles.where(category: "top"), :id, :description)%>
   <br>
   <%= f.label "Select Outerwear"%>
-  <%= f.collection_select(:outerwear_id, @user_articles.where(category: "outerwear"), :id, :category)%>
+  <%= f.collection_select(:outerwear_id, @user_articles.where(category: "outerwear"), :id, :description)%>
   <br>
   <%= f.label "Select Accessories"%>
-  <%= f.collection_select(:accessory_id, @user_articles.where(category: "accessory"), :id, :category)%>
+  <%= f.collection_select(:accessory_id, @user_articles.where(category: "accessory"), :id, :description)%>
   <br>
   <%= f.label "Select Bottom"%>
-  <%= f.collection_select(:bottom_id, @user_articles.where(category: "bottom"), :id, :category)%>
+  <%= f.collection_select(:bottom_id, @user_articles.where(category: "bottom"), :id, :description)%>
   <br>
   <%= f.label "Select Shoes"%>
-  <%= f.collection_select(:shoes_id, @user_articles.where(category: "shoes"), :id, :category)%>
+  <%= f.collection_select(:shoes_id, @user_articles.where(category: "shoes"), :id, :description)%>
   <br>
   <%= f.submit "Create Outfit" %> <br>
 
