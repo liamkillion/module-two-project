@@ -1,15 +1,17 @@
 <h1>New Outfit</h1>
 <%@user_articles = Article.all.where(user_id:session[:user_id])%>
+
 <%=@user_articles.first.category%>
+
 <%= form_for @outfit, url:new_user_outfit_path do |f| %>
   <%= f.label "Name of Outfit"%>
   <%= f.text_field "name"%>
   <br>
   <%= f.label "Pants"%>
-  <%= f.collection_select(:article_ids, @user_articles.where(category: "pants"), :id, :category)%>
+  <%= f.collection_select(:article_ids, @user_articles.where(category: "bottom"), :id, :category)%>
   <br>
   <%= f.label "Shirt"%>
-  <%= f.collection_select(:article_ids, @user_articles.where(category: "shirt"), :id, :category)%>
+  <%= f.collection_select(:article_ids, @user_articles.where(category: "top"), :id, :category)%>
   <br>
   <%= f.label "Shoes"%>
   <%= f.collection_select(:article_ids, @user_articles.where(category: "shoes"), :id, :category)%>
@@ -18,7 +20,7 @@
   <%= f.collection_select(:article_ids, @user_articles.where(category: "outerwear"), :id, :category)%>
   <br>
   <%= f.label "Accessories"%>
-  <%= f.collection_select(:article_ids, @user_articles.where(category: "accessories"), :id, :category)%>
+  <%= f.collection_select(:article_ids, @user_articles.where(category: "accessory"), :id, :category)%>
   <br>
   <%= f.submit "Create Outfit" %> <br>
 

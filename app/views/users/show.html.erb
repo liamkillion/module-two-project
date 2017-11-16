@@ -15,6 +15,7 @@
   <ul>
     <li><%=link_to "View Your Outfits", user_outfits_path(@user)%></li>
     <li><%=link_to "View Your Closet", user_articles_path(@user)%></li>
+    <li><%=link_to "Add a new article", new_user_article_path(@user.id)%></li>
 
 
   <%else%>

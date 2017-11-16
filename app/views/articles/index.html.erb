@@ -165,6 +165,7 @@ h1 {
       <p>Article Name</p>
       <p><%= link_to 'Show', user_article_path(article.user, article) %></p>
       <p><%= link_to 'Edit', edit_user_article_path(article.user, article) %></p>
+      <p><%=link_to "Create a new outfit", new_user_outfit_path(session[:user_id])%></p>
     </div>
   </div>
 <% end %>

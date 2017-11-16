@@ -155,4 +155,5 @@ span.onclick = function() {
 
 
 <%= link_to 'Edit', edit_user_article_path(@article.user, @article) %> |
-<%= link_to 'Back', user_article_path(@article.user, @article) %>
+<%= link_to 'Back', user_articles_path %> |
+<%=link_to "New outfit", new_user_outfit_path(session[:user_id])%>
