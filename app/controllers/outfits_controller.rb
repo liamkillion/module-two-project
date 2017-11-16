@@ -27,8 +27,13 @@ class OutfitsController < ApplicationController
   # POST /outfits.json
   def create
     @outfit = Outfit.new(outfit_params)
-    @outfit.save
-    redirect_to user_outfit_path(user_id: session[:user_id], id: @outfit)
+    @outfit.user_id=params[:user_id]
+    @outfit.article_ids = params[:outfit][:article_ids]
+    if @outfit.save
+      redirect_to user_outfit_path(@outfit.user.id,@outfit.id)
+    else
+      render :new
+    end
   end
 
   # PATCH/PUT /outfits/1
@@ -52,6 +57,6 @@ class OutfitsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def outfit_params
-    params.require(:outfit).permit(:name, :user_id, :article_ids=>[])
+    params.require(:outfit).permit(:name, :top_id, :bottom_id, :shoes_id, :outerwear_id, :accessory_id)
   end
 end
