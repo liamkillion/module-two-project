@@ -130,10 +130,10 @@ h1 {
 <br>
 <%= link_to 'New Article', new_user_article_path %>
 
-
+<%@user_articles = Article.all.where(user_id:session[:user_id])%>
 <!-- Portfolio Gallery Grid -->
 <div class="row">
-<% @articles.each do |article| %>
+<% @user_articles.each do |article| %>
   <div class="column <%=article.category%>">
     <div class="content">
       <img id="myImg" src="<%= article.image.url %>" alt="Article name" style="width:100%">
