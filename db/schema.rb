@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171116014145) do
     t.string "color"
     t.boolean "summer"
     t.boolean "winter"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -30,18 +31,15 @@ ActiveRecord::Schema.define(version: 20171116014145) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-<<<<<<< HEAD
-    t.string "category"
-=======
->>>>>>> 5dcc197bf65229c7d2c77e968145b3a82b6f04a7
     t.string "description"
   end
 
   create_table "outfits", force: :cascade do |t|
     t.integer "user_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
+    t.string "article_ids"
     t.integer "top_id"
     t.integer "bottom_id"
     t.integer "outerwear_id"

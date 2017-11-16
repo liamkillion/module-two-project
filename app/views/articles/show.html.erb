@@ -1,56 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<!DOCTYPE html>
-<html>
-<head>
+ <%= image_tag @article.image.url(:medium) %>
+
+ <p>
+   <strong>Category:</strong>
+   <%= @article.category %>
+ </p>
+
+ <p>
+   <strong>Color:</strong>
+   <%= @article.color %>
+ </p>
+
+ <p>
+   <strong>Summer:</strong>
+   <%= @article.summer %>
+ </p>
+
+ <p>
+   <strong>Winter:</strong>
+   <%= @article.winter %>
+ </p>
+
 <style>
-* {
-    box-sizing: border-box;
-}
-body {
-    background-color: #F9CDC5;
-    padding: 20px;
-    font-family: Arial;
-}
-/* Center website */
-.main {
-    max-width: 1000px;
-    margin: auto;
-}
-h1 {
-    font-size: 50px;
-    word-break: break-all;
-}
-.row {
-    margin: 10px -16px;
-}
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-    padding: 5px;
-}
-/* Create three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 33.33%;
-    display: none; /* Hide all elements by default */
-}
-/* Clear floats after rows */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-/* Content */
-.content {
-    background-color: white;
-    padding: 10px;
-}
-.content:hover {opacity: 0.7;}
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
+
+#myImg {
+     borderradius: 5px;
+     cursor: pointer;
+     transition: 0.3s;
+   }
+
+#myImg:hover {opacity: 0.7;}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -108,80 +89,32 @@ h1 {
     font-weight: bold;
     transition: 0.3s;
 }
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    textdecoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+       width: 100%;
+}
+}
 </style>
 </head>
 
 <body>
 
-<!-- MAIN (Center website) -->
-<div class="main">
-
-<h1>MY CLOSET</h1>
-<hr>
-
-<h2>PORTFOLIO</h2>
-<input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
-<input type="radio" onclick="filterSelection('outerwear')" name="category"> Outerwear
-<input type="radio" onclick="filterSelection('top')" name="category"> Tops
-<input type="radio" onclick="filterSelection('bottom')" name="category"> Bottoms
-<input type="radio" onclick="filterSelection('accessory')" name="category"> Accessories
-<input type="radio" onclick="filterSelection('shoes')" name="category"> Shoes
-<br>
-<br>
-<%= link_to 'New Article', new_user_article_path %>
-
-
-<!-- Portfolio Gallery Grid -->
-<div class="row">
-<% @articles.each do |article| %>
-  <div class="column <%=article.category%>">
-    <div class="content">
-      <img id="myImg" src="<%= article.image.url %>" alt="Article name" style="width:100%">
-      <h4><%=article.color%> + <%=article.winter%> + <%=article.summer%> </h4>
-      <p>Article Name</p>
-      <p><%= link_to 'Show', user_article_path(article.user, article) %></p>
-      <p><%= link_to 'Edit', edit_user_article_path(article.user, article) %></p>
-    </div>
-  </div>
-<% end %>
+<img id="myImg" src="http://vignette3.wikia.nocookie.net/pottermore/images/9/99/Snowball-lrg.png/revision/latest?cb=20130412122815" alt="Trolltunga, Norway" width="300" height="200">
 
 <!-- END GRID -->
-</div>
+
 
 <!-- END MAIN -->
-</div>
 
-<script>
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("column");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
-</script>
 
 
 <!-- The Modal -->
