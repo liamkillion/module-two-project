@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171115150744) do
-=======
 ActiveRecord::Schema.define(version: 20171116014145) do
-
->>>>>>> 329a4c71cf50d0699923e7a4907dabed602e7998
 
   create_table "article_outfits", force: :cascade do |t|
     t.integer "outfit_id"
@@ -36,16 +31,14 @@ ActiveRecord::Schema.define(version: 20171116014145) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.string "category"
-<<<<<<< HEAD
-=======
     t.string "description"
->>>>>>> 329a4c71cf50d0699923e7a4907dabed602e7998
   end
 
   create_table "outfits", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "article_ids"
     t.string "name"
     t.integer "top_id"
     t.integer "bottom_id"
