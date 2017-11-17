@@ -11,39 +11,42 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :article_description %>
-  </div>
+  <div >
 
+    <%= form.text_field :description, id: :article_description, placeholder: 'description', class: 'transparent-input focus' %>
+  </div>
+<br>
 <%categories=["top","bottom","outerwear","shoes","accessory"]%>
-
+<br>
   <div class="field">
-    <%= form.label :category %>
+    <%= form.label :category, class:"checkboxstuff" %>
+
     <%= form.select(:category, options_for_select([["Top", "top"],["Bottom", "bottom"],["Outerwear", "outerwear"],["Accessory", "accessory"],["Shoes", "shoes"]])) %>
+<br>
   </div>
+<br>
+  <div class="field">
+      <%= form.text_field :color, id: :article_color, placeholder: 'description', class: 'transparent-input focus' %>
+
+  </div>
+  <br>
 
   <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color, id: :article_color %>
+    <%= form.label :summer, class:"checkboxstuff" %>
+    <%= form.check_box :summer, id: :article_summer%>
   </div>
-
+<br>
   <div class="field">
-    <%= form.label :summer %>
-    <%= form.check_box :summer, id: :article_summer %>
-  </div>
-
-  <div class="field">
-    <%= form.label :winter %>
+    <%= form.label :winter, class:"checkboxstuff" %>
     <%= form.check_box :winter, id: :article_winter %>
   </div>
-
+<br>
   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
 
+    <%= form.file_field :image, class:"button456" %>
+  </div>
+<br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "upload", {class: "button45"}%>
   </div>
 <% end %>
