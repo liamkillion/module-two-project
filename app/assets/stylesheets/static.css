@@ -42,8 +42,37 @@ ul {
 	letter-spacing: 4px
 }
 
-.moveright {
+div.moveright {
 	margin-left: 20px;
+
+}
+
+
+div.moveright2 {
+	margin-left: 100px;
+
+}
+
+div.backwhite{
+	background-color: white;
+	z-index: 0;
+	position: fixed;
+}
+
+
+
+div.anyout {
+color: white;
+opacity: 0.8;
+font-style: italic;
+font-weight: 100;
+font-family: 'Cormorant', serif;
+letter-spacing: 4px;
+margin-left: 60px;
+}
+
+div.moverightright {
+	margin-left: 150px;
 	margin-bottom: 50px;
 }
 
@@ -82,6 +111,20 @@ input:focus {
 	transition-duration: 0.4s;
 	color: white;
 	letter-spacing: 8px
+}
+
+.button45 {
+	border-top: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	padding: 10px 20px !important;
+	font-weight: 200;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.0);
+	transition-duration: 0.4s;
+	color: white;
+	letter-spacing: 3px
 }
 
 a:link {
@@ -166,6 +209,16 @@ a:hover{
   margin-top: 10px;
 	margin-bottom: 30px;
 }
+.headsss25{
+	color: white;
+
+	font-weight: 100;
+	font-size: 26pt;
+  font-family: 'didot', sans-serif;
+	margin-left: 15px;
+  letter-spacing: 2px;
+
+}
 
 .headsss3{
 
@@ -173,7 +226,7 @@ a:hover{
 	font-size: 12pt;
 	color: white;
   font-family: 'Cormorant', serif;
-	margin-left: 50px;
+	margin-left: 42px;
   letter-spacing: 3px;
 	opacity: 0.8;
 

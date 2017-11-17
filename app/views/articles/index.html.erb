@@ -118,25 +118,31 @@ h1 {
 <!-- MAIN (Center website) -->
 <div class="main">
 
-<h1>MY CLOSET</h1>
-<hr>
+<h1 class="headsss25">My Closet</h1>
+<hr color="white">
+<br>
+<div class="backwhite">
 
-<h2>PORTFOLIO</h2>
+</div>
 
-<input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
-<input type="radio" class="radiobutt" onclick="filterSelection('outerwear')" name="category"> Outerwear
+ &nbsp; <input type="radio" onclick="filterSelection('all')" name="category" checked> Show all  &nbsp;  &nbsp;  &nbsp;
+<input type="radio" class="radiobutt" onclick="filterSelection('outerwear')" name="category"> Outerwear &nbsp;  &nbsp;  &nbsp;
 <input type="radio" class="radiobutt" onclick="filterSelection('top')" name="category"> Tops
-<input type="radio" class="radiobutt" onclick="filterSelection('bottom')" name="category"> Bottoms
-<input type="radio" class="radiobutt" onclick="filterSelection('accessory')" name="category"> Accessories
+<br>
+ &nbsp; <input type="radio" class="radiobutt" onclick="filterSelection('bottom')" name="category"> Bottoms  &nbsp;  &nbsp;  &nbsp;
+<input type="radio" class="radiobutt" onclick="filterSelection('accessory')" name="category"> Accessories  &nbsp;  &nbsp;
 <input type="radio" class="radiobutt" onclick="filterSelection('shoes')" name="category"> Shoes
 <br>
-<br>
-<div class="button newbutt">
 
-<a class="newbutt">
-<%= link_to 'New Article', new_user_article_path%>
-</a>
+
+<br>
+ &nbsp;<a class="newbutt" href=<%=new_user_article_path%>>
+<div class="button45">
+  Create a new outfit
 </div>
+</a>
+
+
 <%@user_articles = Article.all.where(user_id:session[:user_id])%>
 <!-- Portfolio Gallery Grid -->
 
