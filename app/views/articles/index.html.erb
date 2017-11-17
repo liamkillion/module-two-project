@@ -137,8 +137,16 @@ h1 {
   <div class="column <%=article.category%>">
     <div class="content">
       <img id="myImg" src="<%= article.image.url %>" alt="Article name" style="width:100%">
-      <h4><%=article.color%> + <%=article.winter%> + <%=article.summer%> </h4>
-      <p>Article Name</p>
+      <%qualities=""%>
+      <%if article.winter && article.summer%>
+          <%qualities<<"All Year"%>
+        <%elsif article.winter%>
+          <%qualities<<"Winter Wear"%>
+        <%elsif article.summer%>
+          <%qualities<<"Summer Wear"%>
+        <%end%>
+      <h4><%=article.description%></h4>
+      <h4><%=article.color%>, <%=qualities%></h4>
       <p><%= link_to 'Show', user_article_path(article.user.id, article.id) %></p>
       <p><%= link_to 'Edit', edit_user_article_path(article.user, article) %></p>
       <p><%=link_to "Create a new outfit", new_user_outfit_path(session[:user_id])%></p>
