@@ -1,37 +1,58 @@
 <p id="notice"><%= notice %></p>
+<h2>
 
- <%= image_tag @article.image.url(:medium) %>
- <p>
-   <strong>Description:</strong>
-   <%= @article.description %>
- </p>
 
- <p>
-   <strong>Category:</strong>
-   <%= @article.category %>
- </p>
-
- <p>
-   <strong>Color:</strong>
-   <%= @article.color %>
- </p>
-
- <p>
-   <strong>Summer:</strong>
-   <%= @article.summer %>
- </p>
-
- <p>
-   <strong>Winter:</strong>
-   <%= @article.winter %>
- </p>
-
-<style>
+<%= image_tag @article.image.url(:medium) %>
+</h2>
 
 
 
-</body>
-</html>
-<%= link_to 'Edit', edit_user_article_path(@article.user, @article) %> |
-<%= link_to 'Back', user_articles_path %> |
-<%=link_to "New outfit", new_user_outfit_path(session[:user_id])%>
+    <strong ><%= "Description:" %> </strong >
+
+    <div class="headsss334 move">
+      <%= @article.description%>
+    </div>
+
+<br>
+
+      <strong ><%= "Category:" %> </strong >
+
+      <div class="headsss334 move">
+        <%= @article.category%>
+      </div>
+
+<br>
+
+
+        <strong ><%= "Color:" %> </strong >
+
+        <div class="headsss334 move">
+          <%= @article.color%>
+        </div>
+
+<br>
+
+          <strong ><%= "Summer?" %> </strong >
+
+          <div class="headsss334 move">
+            <%= @article.summer%>
+          </div>
+
+<br>
+
+
+          <strong> Winter?</strong>
+            <div class="headsss334 move">
+              <%= @article.winter%>
+            </div>
+
+
+  <style>
+
+
+
+  </body>
+  </html>
+  <%= link_to 'Edit', edit_user_article_path(@article.user, @article) %> |
+  <%= link_to 'Back', user_articles_path %> |
+  <%=link_to "New outfit", new_user_outfit_path(session[:user_id])%>

@@ -232,3 +232,21 @@ input.transparent-input2 {
 	opacity: 0.7;
 
 }
+
+.headsss334{
+
+	font-weight: 100;
+	font-size: 12pt;
+	color: white;
+  font-family: 'Cormorant', serif;
+
+  letter-spacing: 3px;
+	opacity: 0.7;
+
+}
+
+
+strong, div.move {
+	margin-left: 20px;
+	size: 4pt;
+}
