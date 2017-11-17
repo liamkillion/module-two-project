@@ -16,9 +16,11 @@
     <%= form.text_field :description, id: :article_description %>
   </div>
 
+<%categories=["top","bottom","outerwear","shoes","accessory"]%>
+
   <div class="field">
     <%= form.label :category %>
-    <%= form.text_field :category, id: :article_category %>
+    <%= form.select(:category, options_for_select([["Top", "top"],["Bottom", "bottom"],["Outerwear", "outerwear"],["Accessory", "accessory"],["Shoes", "shoes"]])) %>
   </div>
 
   <div class="field">

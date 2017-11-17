@@ -3838,9 +3838,6 @@
 
  .navbar-brand {
  	display: inline-block;
- 	padding-top: .4125rem;
- 	padding-bottom: .6125rem;
- 	margin-right: 1rem;
  	font-size: 1.25rem;
  	line-height: inherit;
  	white-space: nowrap;
@@ -4222,9 +4219,8 @@
 
  .navbar-dark .navbar-brand {
  	color: white;
-  opacity: 0.8;
   font-family: 'Slabo 27px', serif;
-  font-size: 32px;
+  font-size: 100px;
   font-weight: 300;
 
 
