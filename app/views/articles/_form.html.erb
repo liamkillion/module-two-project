@@ -20,17 +20,12 @@
 
   <div class="field">
     <%= form.label :category %>
-    <%= form.select(:category, options_for_select([["top", "top"],["bottom", "bottom"]])) %>
+    <%= form.select(:category, options_for_select([["Top", "top"],["Bottom", "bottom"],["Outerwear", "outerwear"],["Accessory", "accessory"],["Shoes", "shoes"]])) %>
   </div>
 
   <div class="field">
     <%= form.label :color %>
     <%= form.text_field :color, id: :article_color %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :article_description %>
   </div>
 
   <div class="field">

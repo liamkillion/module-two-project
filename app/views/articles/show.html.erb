@@ -3,6 +3,11 @@
  <%= image_tag @article.image.url(:medium) %>
 
  <p>
+   <strong>Description:</strong>
+   <%= @article.description %>
+ </p>
+
+ <p>
    <strong>Category:</strong>
    <%= @article.category %>
  </p>
