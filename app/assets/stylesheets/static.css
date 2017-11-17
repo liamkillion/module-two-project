@@ -43,7 +43,8 @@ ul {
 }
 
 .moveright {
-	;
+	margin-left: 20px;
+	margin-bottom: 50px;
 }
 
 * {
@@ -81,6 +82,47 @@ input:focus {
 	transition-duration: 0.4s;
 	color: white;
 	letter-spacing: 8px
+}
+
+a:link {
+	background: rgba(0,0,0,0);
+	color: white;
+}
+a::visited {
+	color: white;
+
+}
+
+a:hover{
+	color: white;
+}
+
+.radiobutt {
+	display: inline;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+	.radiobutt input {
+	  position: absolute;
+	  opacity: 0;
+	}
+
+	.radiobuttcheck {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
 }
 
 .button2 {
@@ -173,6 +215,8 @@ input:focus {
 	transition-duration: 0.2s;
 	color: white !important;
 }
+
+
 
 .headings {
 	text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);

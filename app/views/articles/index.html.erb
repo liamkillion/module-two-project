@@ -45,8 +45,10 @@ h1 {
 .content {
     background-color: white;
     padding: 10px;
+
 }
 .content:hover {opacity: 0.7;}
+
 /* The "show" class is added to the filtered elements */
 .show {
   display: block;
@@ -120,23 +122,33 @@ h1 {
 <hr>
 
 <h2>PORTFOLIO</h2>
-<input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
-<input type="radio" onclick="filterSelection('outerwear')" name="category"> Outerwear
-<input type="radio" onclick="filterSelection('top')" name="category"> Tops
-<input type="radio" onclick="filterSelection('bottom')" name="category"> Bottoms
-<input type="radio" onclick="filterSelection('accessory')" name="category"> Accessories
-<input type="radio" onclick="filterSelection('shoes')" name="category"> Shoes
-<br>
-<br>
-<%= link_to 'New Article', new_user_article_path %>
 
+<input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
+<input type="radio" class="radiobutt" onclick="filterSelection('outerwear')" name="category"> Outerwear
+<input type="radio" class="radiobutt" onclick="filterSelection('top')" name="category"> Tops
+<input type="radio" class="radiobutt" onclick="filterSelection('bottom')" name="category"> Bottoms
+<input type="radio" class="radiobutt" onclick="filterSelection('accessory')" name="category"> Accessories
+<input type="radio" class="radiobutt" onclick="filterSelection('shoes')" name="category"> Shoes
+<br>
+<br>
+<div class="button newbutt">
+
+<a class="newbutt">
+<%= link_to 'New Article', new_user_article_path%>
+</a>
+</div>
 <%@user_articles = Article.all.where(user_id:session[:user_id])%>
 <!-- Portfolio Gallery Grid -->
+
 <div class="row">
 <% @user_articles.each do |article| %>
+
   <div class="column <%=article.category%>">
+
     <div class="content">
+      <%=  link_to user_article_path(article.user.id, article.id) do%>
       <img id="myImg" src="<%= article.image.url %>" alt="Article name" style="width:100%">
+      <% end %>
       <%qualities=""%>
       <%if article.winter && article.summer%>
           <%qualities<<"All Year"%>
@@ -145,13 +157,16 @@ h1 {
         <%elsif article.summer%>
           <%qualities<<"Summer Wear"%>
         <%end%>
+
       <h4><%=article.description%></h4>
       <h4><%=article.color%>, <%=qualities%></h4>
       <p><%= link_to 'Show', user_article_path(article.user.id, article.id) %></p>
       <p><%= link_to 'Edit', edit_user_article_path(article.user, article) %></p>
       <p><%=link_to "Create a new outfit", new_user_outfit_path(session[:user_id])%></p>
     </div>
+
   </div>
+
 <% end %>
 
 <!-- END GRID -->
