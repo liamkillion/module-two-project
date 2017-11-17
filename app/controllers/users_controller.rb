@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
     if @user.valid?
       @user.save
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       flash.now[:notice] = "There was an error getting you signed up. Try that again :)"

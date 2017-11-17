@@ -8,7 +8,7 @@
 <!-- <div class="headings1">
    <h3>new user?</h3>
    </div> -->
-<%= form_for @user, class: "moveright" do |f|  %>
+<%= form_for @user, class: "moveright", url:"/users/#{session[:user_id]}" do |f|  %>
 <div class="col-md-8">
 <div class="form-group">
    <br>
