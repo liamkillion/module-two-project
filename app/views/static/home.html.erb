@@ -1,14 +1,10 @@
 <br>
-<br>
-<br>
-<!-- <%= form_tag "/login", :class => "form-inline" do %>
-   <%= text_field_tag "user[email]" %>
-   <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
-   <% end %> -->
-<!-- <div class="headings1">
-   <h3>new user?</h3>
-   </div> -->
-<%= form_for @user, class: "moveright", url:"/users/#{session[:user_id]}" do |f|  %>
+
+   <div class="moveright">
+
+
+<%= form_for @user, class: "moveright" do |f|  %>
+
 <div class="col-md-8">
 <div class="form-group">
    <br>
@@ -35,4 +31,5 @@
    <%= password_field_tag "user[password]", nil, placeholder: 'existing user password', class: 'transparent-input focus', size:59 %><br></br>
    <%= button_tag "Login", class: "button" %>
    <% end %>
+</div>
 </div>
