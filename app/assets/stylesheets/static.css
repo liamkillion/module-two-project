@@ -1,6 +1,7 @@
 body,
 html,
-h3 {
+h3,
+ul {
 	height: 100%;
 }
 
@@ -76,15 +77,95 @@ input:focus {
 	padding: 10px 20px !important;
 	font-weight: 200;
 	display: inline-block;
-	background-color: rgba(121, 121, 134, 0.0);
+	background-color: rgba(0, 0, 0, 0.0);
 	transition-duration: 0.4s;
 	color: white;
 	letter-spacing: 8px
 }
 
-a.nav-link {
- color: black;
+.button2 {
+	border-top: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	text-align: center;
+	width: 13%;
+	padding: 10px 20px !important;
+	font-weight: 100;
+
+	background-color: rgba(0, 0, 0, 0.0);
+	transition-duration: 0.4s;
+	color: gray;
+	letter-spacing: 2px
 }
+
+.imagestuff{
+	transform:scale(20px,10px);
+}
+
+
+.headsss {
+	color: white;
+	font-size: 26pt;
+	weight: 100;
+	opacity: 0.8;
+	font-family: 'Didot', serif;
+	letter-spacing: 2px;
+	margin-left: 25px;
+}
+
+.headsss2{
+
+	font-weight: 100;
+	font-size: 10pt;
+  font-family: 'Nunito', sans-serif;
+	margin-left: 25px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.headsss3{
+
+	font-weight: 100;
+	font-size: 12pt;
+	color: white;
+  font-family: 'Cormorant', serif;
+	margin-left: 50px;
+  letter-spacing: 3px;
+	opacity: 0.8;
+
+}
+
+.headsss3:focus,
+.headsss3:hover {
+ background-color: rgba(0,0,0,0);
+ color: white;
+ background-image: linear-gradient( to right, gray, gray);
+
+ background-repeat: repeat-x;
+ background-position: 0 100%;
+ -webkit-background-size: 50% 1px;
+ background-size: 50% 1px;
+}
+
+.headsss3:visited {
+	font-weight: 100;
+	font-size: 12pt;
+	color: white;
+  font-family: 'Cormorant', serif;
+	margin-left: 50px;
+  letter-spacing: 3px;
+	opacity: 0.8;
+}
+/*
+.bordering{
+	border-right: 2px solid gray;
+	margin-left:
+
+
+}*/
+
 
 .button:hover {
 	background-color: rgba(121, 121, 134, 0.1);
@@ -114,4 +195,40 @@ input.transparent-input {
 	outline: 0;
 	background: transparent;
 	border-bottom: 1px solid white;
+}
+
+input.transparent-input2 {
+	background-color: rgba(0, 0, 0, 0) !important;
+	border-bottom: white;
+	color: white;
+	font-weight: 500;
+	font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+	letter-spacing: 4px border:0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid white;
+	width: 45%;
+}
+
+.transparent-input3 {
+	color: white;
+	opacity: 0.8;
+	font-style: italic;
+	font-weight: 100;
+	font-family: 'Cormorant', serif;
+	letter-spacing: 4px
+}
+
+
+.headsss33{
+
+	font-weight: 100;
+	font-size: 16pt;
+	color: white;
+  font-family: 'Cormorant', serif;
+	margin-left: 160px;
+  letter-spacing: 3px;
+	opacity: 0.7;
+
 }
