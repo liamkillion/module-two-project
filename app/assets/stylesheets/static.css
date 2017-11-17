@@ -42,6 +42,15 @@ ul {
 	letter-spacing: 4px
 }
 
+.checkboxstuff {
+	color: white;
+	opacity: 0.8;
+	font-style: italic;
+	font-weight: 100;
+	font-family: 'Cormorant', serif;
+	letter-spacing: 4px
+}
+
 div.moveright {
 	margin-left: 20px;
 
@@ -124,7 +133,8 @@ input:focus {
 	background-color: rgba(0, 0, 0, 0.0);
 	transition-duration: 0.4s;
 	color: white;
-	letter-spacing: 3px
+	letter-spacing: 3px;
+	border-radius: 0px;
 }
 
 a:link {
@@ -182,6 +192,21 @@ a:hover{
 	transition-duration: 0.4s;
 	color: gray;
 	letter-spacing: 2px
+}
+
+.button456{
+	border-top: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	padding: 10px 20px !important;
+	font-weight: 200;
+
+
+	background-color: rgba(0, 0, 0, 0.0);
+	transition-duration: 0.4s;
+	color: white;
+	letter-spacing: 3px
 }
 
 .imagestuff{
